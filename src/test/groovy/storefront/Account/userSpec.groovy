@@ -1,4 +1,4 @@
-package storefront
+package storefront.Account
 
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
