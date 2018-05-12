@@ -14,7 +14,12 @@ pipeline {
                 sh '$GRADLE_HOME/bin/gradle --version'
             }
         }
+        stage('build') {
+            buildscript {
+                sh '$GRADLE_HOME/bin/gradle build'
+            }
+        }
 
     }
-    
+
 }
