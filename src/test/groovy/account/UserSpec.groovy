@@ -12,7 +12,7 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
     def cleanup() {
     }
 
-    void "test create account"() {
+    void "testCreateAccount"() {
         given:
             setup()
 
@@ -20,11 +20,12 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
             User.count() == 1
     }
 
-    void "test"() {
-        given:
-            setup()
+//    void "test"() {
+//        given:
+//            setup()
+//
+//        expect:
+//            userAccount == 'jdoe'
+//    }
 
-        expect:
-            userAccount == 'jdoe'
-    }
 }
