@@ -10,12 +10,12 @@ pipeline {
 
     stages {
         stage('clean') {
-            stes {
+            steps {
                 sh '$GRADLE_HOME/bin/gradle --version'
             }
         }
         stage('build') {
-            buildscript {
+            steps {
                 sh '$GRADLE_HOME/bin/gradle build'
             }
         }
