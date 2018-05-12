@@ -1,9 +1,9 @@
-package storefront
+package account
 
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class Account.userSpec extends Specification implements DomainUnitTest<Account.user> {
+class RoleSpec extends Specification implements DomainUnitTest<Role> {
 
     def setup() {
     }
