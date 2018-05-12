@@ -13,8 +13,9 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
     }
 
     void "test something"() {
-//        expect:"fix me"
-//            true == false
+        given:
+            setup()
+            
         expect:
             User.count() == 1
     }
