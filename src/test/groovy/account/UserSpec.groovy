@@ -12,12 +12,19 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
     def cleanup() {
     }
 
-    void "testCreateAccount"() {
-//        given:
-//            setup()
-
-        expect:
-            User.count() == 0
+    void "test for null"() {
+        when:
+            domain.name = null
+        then:
+            !domain.validate(['userAccount'])
+            domain.errors.[['userAccount'].code == 'nullable'
     }
 
+    void "test for blank"() {
+        when:
+            domain.name = ''
+        then:
+            !domain.validate(['userAccount'])
+    }
+    
 }
