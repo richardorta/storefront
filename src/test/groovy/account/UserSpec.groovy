@@ -20,12 +20,4 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
             User.count() == 0
     }
 
-//    void "test"() {
-//        given:
-//            setup()
-//
-//        expect:
-//            userAccount == 'jdoe'
-//    }
-
 }
