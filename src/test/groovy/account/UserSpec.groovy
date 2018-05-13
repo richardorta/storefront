@@ -17,7 +17,7 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
             domain.name = null
         then:
             !domain.validate(['userAccount'])
-            domain.errors.['userAccount'].code == 'nullable'
+            domain.errors['userAccount'].code == 'nullable'
     }
 
     void "test for blank"() {
