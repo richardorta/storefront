@@ -30,7 +30,7 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
             new User(userAccount: 'jdoe', userFullname:'John Doe').save(flush: true)
 
         expect:
-            User.count() == 0
+            User.count() == 1
     }
 
     void 'test for null' () {
@@ -44,7 +44,7 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
 
     void 'test for blank' () {
         when:
-            domain.userAccount = ''
+            domain.userAccount = ('')
         then:
             !domain.validate(['userAccount'])
     }
