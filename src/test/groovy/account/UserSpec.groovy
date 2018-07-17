@@ -47,6 +47,7 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
             domain.userAccount = ('')
         then:
             !domain.validate(['userAccount'])
+            domain.errors['userAccount'].code == 'blank'
     }
 
 }
