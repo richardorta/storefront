@@ -42,6 +42,7 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
             domain.errors['userAccount'].code == 'nullable'
     }
 
+    /*
     void 'test for blank' () {
         when:
             domain.userAccount = ''
@@ -49,5 +50,7 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
         then:
             !domain.validate(['userAccount'])
     }
+    */
+    
 
 }
