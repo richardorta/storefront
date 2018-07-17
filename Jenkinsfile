@@ -19,7 +19,16 @@ pipeline {
                 sh '$GRADLE_HOME/bin/gradle build'
             }
         }
-
+        stage('Test') {
+            steps {
+                sh './gradlew check'
+            }
+        }
     }
-
+    
+    post {
+        always {
+            junit 'build/reports/**/*.xml'
+        }
+    }
 }
