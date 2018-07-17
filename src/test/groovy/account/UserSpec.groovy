@@ -19,7 +19,7 @@ class UserSpec extends Specification implements DomainUnitTest<User> {
     void "test - check user" () {
         given:
             setupData()
-            new User(userAccount: 'jdoe', userFullname:'John Doe').save(flush: true)
+            //new User(userAccount: 'jdoe', userFullname:'John Doe').save(flush: true)
 
         expect:
             User.count() == 1
