@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('clean') {
             steps {
-                sh '$GRADLE_HOME/bin/gradle --version'
+                //sh '$GRADLE_HOME/bin/gradle --version'
                 sh 'rm build/test-results'
             }
         }
