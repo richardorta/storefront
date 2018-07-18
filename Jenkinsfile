@@ -29,7 +29,7 @@ pipeline {
     post {
         always {
             junit 'build/test-results/test/**/*.xml'
-            deleteDir() /* clean up our workspace */
+            deleteDir('build/test-results/') /* clean up our workspace */
         }
         success {
             echo 'I succeeeded!'
