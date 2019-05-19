@@ -11,7 +11,8 @@ pipeline {
     stages {
         stage('clean') {
             steps {
-                sh '$GRADLE_HOME/bin/gradle --version'
+                //sh '$GRADLE_HOME/bin/gradle --version'
+                sh 'rm build/test-results'
             }
         }
         stage('build') {
@@ -29,7 +30,7 @@ pipeline {
     post {
         always {
             junit 'build/test-results/test/**/*.xml'
-            deleteDir('build/test-results/') /* clean up our workspace */
+            //deleteDir('build/test-results/') /* clean up our workspace */
         }
         success {
             echo 'I succeeeded!'
