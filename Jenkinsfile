@@ -1,19 +1,47 @@
 pipeline {
-
     agent {
         label 'linux'
     }
-    
+
     environment {
         GRADLE_HOME = tool('gradle-4.6')
-        
+
     }
-    
+
     stages {
         stage('clean') {
-            stes {
-                sh '$GRADLE_HOME/bin/gradle --version'
-            } 
+            steps {
+                //sh '$GRADLE_HOME/bin/gradle --version'
+                sh 'rm build/test-results'
+            }
+        }
+        stage('build') {
+            steps {
+                sh '$GRADLE_HOME/bin/gradle build'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh './gradlew check'
+            }
         }
     }
+    
+    post {
+        always {
+            junit 'build/test-results/test/**/*.xml'
+            //deleteDir('build/test-results/') /* clean up our workspace */
+        }
+        success {
+            echo 'I succeeeded!'
+        }
+        unstable {
+            echo 'I am unstable :/'
+        }
+        failure {
+            echo 'I failed :('
+        }
+        changed {
+            echo 'Things were different before...'
+        }    }
 }
